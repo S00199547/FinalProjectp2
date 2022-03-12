@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<div *ngIf="message" class="alert alert-warning alert-dismissible show" role="alert">
+    <strong>Opps</strong>{{message}}<!--Message-->
+    <button type="button" class="btn-close" (click)="dismissAlert()" aria-label="Close"></button>
+</div>
+<!--Add Device Button-->
+<button (click)="openAddDevice()" *ngIf="!showDeviceForm" class="btn  btn-outline-success" >Add Device</button>
+<!--Edit Device Button-->
+<button (click)="openEditDevice()" *ngIf="!showDeviceForm" [disabled]="!currentDevice"
+class="btn btn-outline-secondary" >Edit Device</button>
+<!--Delete Device Button-->
+<button (click)="deleteDevice()" *ngIf="!showDeviceForm" [disabled]="!currentDevice"
+class="btn btn-outline-danger">Delete Device</button>
+<!--Device Details-->
+<app-device-details *ngIf="currentDevice!" [device]="currentDevice"></app-device-details>
+<!--Device Form-->
+<app-device-form *ngIf="showDeviceForm" (newDeviceEvent)="addNewDevice"
+(deviceFormClose)="deviceFormClose($event)"
+  [device]="currentDevice"></app-device-form>
+
+  <div *ngIf="!showDeviceForm">
+    <!--Device row-->
+    
+  <app-device-row  class="list-group list-group-numbered" class="card"  *ngFor="let b of deviceList" [device]="b" (click)='clicked(b)'
+      [class.bg-info]="isSelected(b)" [class.text-white]="isSelected(b)">
+    </app-device-row>
+    
+  </div>
+
+</div>
