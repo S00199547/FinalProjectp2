@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DeviceComponent } from './device/device.component';
-import { DeviceListComponent } from './device2/device-list/device-list.component';
-import { DeviceRowComponent } from './device2/device-row/device-row.component';
-import { DeviceDetailsComponent } from './device2/device-details/device-details.component';
-import { DeviceFormComponent } from './device2/device-form/device-form.component';
-import { SampleFormComponent } from './device2/sample-form/sample-form.component';
+import { StationeryComponent } from './stationery/stationery.component';
+import { StationeryListComponent } from './shop/stationery-list/stationery-list.component';
+import{StationeryRowComponent} from'./shop/stationery-row/stationery-row.component';
+import { StationeryDetailsComponent } from './shop/stationery-details/stationery-details.component';
+import { StationeryFormComponent } from './shop/stationery-form/stationery-form.component';
+import { SampleFormComponent } from './shop/sample-form/sample-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
@@ -28,11 +28,11 @@ import { ErrorInterceptor } from './helper/errorinterceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    DeviceComponent,
-    DeviceListComponent,
-    DeviceRowComponent,
-    DeviceDetailsComponent,
-    DeviceFormComponent,
+    StationeryComponent,
+    StationeryListComponent,
+    StationeryRowComponent,
+    StationeryDetailsComponent,
+    StationeryFormComponent,
     SampleFormComponent,
     HomeComponent,
     LoginComponent,

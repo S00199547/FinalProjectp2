@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<div *ngIf="message" class="alert alert-warning alert-dismissible show" role="alert">
+    <strong>Opps</strong>{{message}}<!--Message-->
+    <button type="button" class="btn-close" (click)="dismissAlert()" aria-label="Close"></button>
+</div>
+<!--Add Device Button-->
+<button (click)="openAddStationery()" *ngIf="!showStationeryForm" class="btn  btn-outline-success" >Add Stationery</button>
+<!--Edit Device Button-->
+<button (click)="openEditStationery()" *ngIf="!showStationeryForm" [disabled]="!currentStationery"
+class="btn btn-outline-secondary" >Edit Stationery</button>
+<!--Delete Device Button-->
+<button (click)="deleteStationery()" *ngIf="!showStationeryForm" [disabled]="!currentStationery"
+class="btn btn-outline-danger">Delete Stationery</button>
+<!--Device Details-->
+<app-stationery-details *ngIf="currentStationery!" [stationery]="currentStationery"></app-stationery-details>
+<!--Device Form-->
+<app-stationery-form *ngIf="showStationeryForm" (newStationeryEvent)="addNewStationery"
+(StationeryFormClose)="stationeryFormClose"
+  [stationery]="currentStationery"></app-stationery-form>
+
+  <div *ngIf="!showStationeryForm">
+    <!--Device row-->
+    
+  <app-stationery-row  class="list-group list-group-numbered" class="card"  *ngFor="let b of stationeryList" [stationery]="b" (click)='clicked(b)'
+      [class.bg-info]="isSelected(b)" [class.text-white]="isSelected(b)">
+    </app-stationery-row>
+    
+  </div>
+
+</div>

@@ -1,0 +1,79 @@
+<form [formGroup]="stationeryForm"(ngSubmit)="onSubmit()"
+class>
+
+<!--Clickable code-->
+<button type="button"
+class="btn-close" aria-label="Close"(click)="closeForm()"></button>
+<!--Product name input by user-->
+<div class="mb-3">
+<label for="name"
+class="form-label">Stationery Product Name</label>
+<input id="name" type="text"
+formControlName="name" class="form-control">
+</div>
+<!-- price input by user-->
+<div class="mb-3">
+<label for="price"
+class="form-label">Price</label>
+<input id="price" type="number"
+formControlName="price" class="form-control">
+</div>
+<!--Brand Name input by user-->
+<div class="mb-3">
+    <label for="brandname"
+    class="form-label">Brand Name</label>
+    <input id="brandname" type="text"
+    formControlName="brandname" class="form-control">
+    </div>
+    <!--Quantity input by user-->
+    <div class="mb-3">
+        <label for="quantity"
+        class="form-label">Quantity</label>
+        <input id="quantity" type="number"
+        formControlName="quantity" class="form-control">
+        </div>
+    <!--Subbmitt btn-->
+<button type="submit"
+[disabled]="!stationeryForm?.valid" class="btn btn-primary">Submit</button>
+<!--Alert message-->
+<div *ngIf="name?.invalid && name?.touched" class="alert alert-danger">
+    Name is required and must be more than 3 characters
+</div>
+<!--Alert message-->
+<div *ngIf="price?.invalid && price?.touched" class="alert alert-danger">
+Price is requried</div>
+<!--Alert message-->
+<div *ngIf="brandname?.invalid && brandname?.touched" class="alert alert-danger">Brand name required</div>
+<!--Alert message-->
+<div *ngIf="quantity?.invalid && quantity?.touched" class="alert alert-danger">Quantiy required</div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

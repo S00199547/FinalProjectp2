@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {Device} from'src/app/device';
+import {Stationery} from'src/app/stationery';
 
 @Component({
   selector: 'app-sample-form',
@@ -10,13 +10,14 @@ import {Device} from'src/app/device';
 })
 export class SampleFormComponent implements OnInit {
 
-  @Output() newDeviceEvent= new EventEmitter<Device>();
+  @Output() newStationeryEvent= new EventEmitter<Stationery>();
   message: string="";
 
-  deviceForm:FormGroup=new FormGroup({
+  stationeryForm:FormGroup=new FormGroup({
     name: new FormControl('', [Validators.required,Validators.minLength(10)]),
     price:new FormControl('', [Validators.required,Validators.maxLength(10)]),
-    campanyname: new FormControl('',[Validators.required,Validators.maxLength(10)])
+    brandname: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    quantity: new FormControl('',[Validators.required,Validators.maxLength(10)])
   })
   
   constructor() { }
@@ -26,18 +27,21 @@ export class SampleFormComponent implements OnInit {
 
   onSubmit() {
     console.log('forms submitted with');
-    console.table(this.deviceForm.value);
-    this.newDeviceEvent.emit(this.deviceForm.value)
+    console.table(this.stationeryForm.value);
+    this.newStationeryEvent.emit(this.stationeryForm.value)
   }
 
   get name(){
-    return this.deviceForm.get('name');
+    return this.stationeryForm.get('name');
   }
 
   get price(){
-    return this.deviceForm.get('price');
+    return this.stationeryForm.get('price');
   }
-  get companyname(){
-    return this.deviceForm.get('companyname');
+  get brandname(){
+    return this.stationeryForm.get('brandname');
+  }
+  get quantity(){
+    return this.stationeryForm.get('quantity');
   }
 }

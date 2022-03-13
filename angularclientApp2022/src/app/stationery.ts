@@ -1,11 +1,12 @@
 import { number, string } from "joi"
 
-export interface Device {
+export interface Stationery {
 
     _id,
     name:string,
     price:number,
-    companyname:string,
+    brandname:string,
+    quantity:number,
     person:{name:string,phone:number}
     tags:string[];
 

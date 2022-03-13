@@ -1,0 +1,58 @@
+<form [formGroup]="stationeryForm" (ngSubmit) ="onSubmit()">
+
+<div>
+<label for="name">
+    Stationery Product Name
+</label>
+<input id="name" type="text" formControlName="name">
+
+</div>
+
+<div>
+
+
+    <label for="price"> Price</label>
+    <input id="price" type="number" formControlName="price">
+
+</div>
+
+<div>
+<label for="brandname">Brand Name</label>
+<input id="brandname"
+type="text" formControlName="brandname">
+</div>
+
+<div>
+    <label for="quantity">Quantity</label>
+    <input id="quantity"
+    type="number" formControlName="quantity">
+    </div>
+
+<button type="submit" [disabled]="!stationeryForm.valid"> Submit</button>
+
+
+<div *ngIf="name?.invalid && name?.touched" class="alert alert-danger">
+    Name is required and must be more than 10 characters
+</div>
+
+<div *ngIf="price?.invalid && price?.touched" class="alert alert-danger">
+Price written is requried and must be more than 10 characters</div>
+
+<div *ngIf="brandname?.invalid && brandname?.touched" class="alert alert-danger">Brand Name written is requried and must be more than 10 characters
+
+</div>
+
+<div *ngIf="quantity?.invalid && quantity?.touched" class="alert alert-danger">Quantity written is requried and must be more than 10 characters
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</form>

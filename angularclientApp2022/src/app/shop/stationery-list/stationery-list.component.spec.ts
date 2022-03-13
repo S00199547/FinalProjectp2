@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeviceFormComponent } from './device-form.component';
+import { StationeryListComponent } from './stationery-list.component';
 
-describe('DeviceFormComponent', () => {
-  let component: DeviceFormComponent;
-  let fixture: ComponentFixture<DeviceFormComponent>;
+describe('DeviceListComponent', () => {
+  let component: StationeryListComponent;
+  let fixture: ComponentFixture<StationeryListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeviceFormComponent ]
+      declarations: [ StationeryListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeviceFormComponent);
+    fixture = TestBed.createComponent(StationeryListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
