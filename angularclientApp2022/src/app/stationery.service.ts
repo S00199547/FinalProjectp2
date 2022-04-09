@@ -8,13 +8,14 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StationeryService {
- private dataUri=environment.apiUrl+'/stationery';
+ private dataUri=environment.apiUrl+'/stationeries';
   
  
  
  constructor(private http: HttpClient) { }
 
 addStationery(stationery: Stationery): Observable<Stationery>{
+  console.log("StationeryService");
   return this.http.post<Stationery>(this.dataUri,stationery)
   .pipe(
     catchError(this.handleError)
@@ -72,7 +73,9 @@ console.error('An error occurred:',error.error.message)
 
 
 
+/*private dummyDevicesData : Stationery[]=[{"tags":[],"_id":"61796a48d32326ac8b03b252", "name":"Phone","price":1800, "brandname":"Muji", "quantity":1}
 
+]*/
 
 
 

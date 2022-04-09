@@ -1,13 +1,12 @@
-import { number, string } from "joi"
+
 
 export interface Stationery {
 
-    _id,
+    _id :string,
     name:string,
     price:number,
     brandname:string,
     quantity:number,
-    person:{name:string,phone:number}
     tags:string[];
 
 }

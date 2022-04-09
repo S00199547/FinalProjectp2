@@ -3,13 +3,13 @@
 <h1>Stationery Shop</h1>
 
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-light "style="background-color: #e3f2fd;" >
+<nav class="navbar navbar-expand navbar-drak" style="background-color:LightGray;" >
     <div class="navbar">
         <a class="nav-item nav-link" routerLink="/" routerLinkActive="active">Home</a>
-        <a class="nav-item nav-link" routerLink="/stationeries" routerLinkActive="active">Stationery</a>
+        <a class="nav-item nav-link" routerLink="/stationeries" routerLinkActive="active">Stationeries</a>
         <a  *ngIf="user"  class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
-        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/login" routerLinkActive="active-link">Login</a>
+        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/register" routerLinkActive="active-link">Register</a>
 
         <a *ngIf="user" class="nav-item nav-link" (click)="logout()">Logout</a>
        
@@ -20,7 +20,7 @@
 <div *ngIf="user" >Current User:{{user.firstName}}</div>
 </div>
 
-<!--<app-device></app-device>-->
-<!--<app-device-list></app-device-list>-->
+<!--<app-stationery></app-stationery>-->
+<!--<app-stationery-list></app-stationery-list>-->
 <router-outlet></router-outlet>
 <!--<app-sample-form></app-sample-form>-->

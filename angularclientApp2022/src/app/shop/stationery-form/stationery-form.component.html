@@ -1,4 +1,4 @@
-<form [formGroup]="stationeryForm"(ngSubmit)="onSubmit()"
+<form #submitform = "ngForm" [formGroup]="stationeryForm"(ngSubmit)="onSubmit(submitform.value)"
 class>
 
 <!--Clickable code-->
@@ -37,7 +37,7 @@ formControlName="price" class="form-control">
 [disabled]="!stationeryForm?.valid" class="btn btn-primary">Submit</button>
 <!--Alert message-->
 <div *ngIf="name?.invalid && name?.touched" class="alert alert-danger">
-    Name is required and must be more than 3 characters
+    Name is required 
 </div>
 <!--Alert message-->
 <div *ngIf="price?.invalid && price?.touched" class="alert alert-danger">

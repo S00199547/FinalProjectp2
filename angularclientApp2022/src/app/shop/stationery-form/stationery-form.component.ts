@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Stationery } from 'src/app/stationery';
+import { StationeryService } from 'src/app/stationery.service';
 
 @Component({
   selector: 'app-stationery-form',
@@ -12,9 +13,9 @@ export class StationeryFormComponent implements OnInit {
   @Input() stationery?: Stationery;
   @Output() stationeryFormClose = new EventEmitter<Stationery>();
   message:string="";
-  stationeryForm : FormGroup= new FormGroup({});
+  stationeryForm? : FormGroup= new FormGroup({});
 
-  constructor() { }
+  constructor(private stationeryservice:StationeryService) { }
 
   ngOnInit(): void {
 
@@ -24,7 +25,7 @@ export class StationeryFormComponent implements OnInit {
         [Validators.required,Validators.minLength(3)]
       ),
       price:new FormControl(this.stationery?.price,
-         [Validators.required,Validators.maxLength(3)]
+         [Validators.required,Validators.maxLength(1)]
       ),
       brandname:new FormControl(this.stationery?.brandname,
           [Validators.required,Validators.minLength(1)]
@@ -35,9 +36,10 @@ export class StationeryFormComponent implements OnInit {
 
     })
   }
-  onSubmit(){
+  onSubmit(stationery:any){
     console.log('forms submitted with');
     console.table(this.stationeryForm?.value);
+    this.stationeryservice.addStationery(stationery)
     this.stationeryFormClose.emit(this.stationeryForm?.value)
   }
   get name(){
