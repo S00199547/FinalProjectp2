@@ -16,6 +16,12 @@ import { RegisterComponent } from './user/register/register.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { JwtinterceptorService } from './helper/jwtinterceptor.service';
 import { ErrorInterceptor } from './helper/errorinterceptor';
+import { NotebooksComponent } from './home/notebooks/notebooks.component';
+import { BooksComponent } from './home/books/books.component';
+import { SketchbooksComponent } from './home/sketchbooks/sketchbooks.component';
+import { PencilsComponent } from './home/pencils/pencils.component';
+import { PensComponent } from './home/pens/pens.component';
+import { ColourpensComponent } from './home/colourpens/colourpens.component';
 
 
 
@@ -37,7 +43,13 @@ import { ErrorInterceptor } from './helper/errorinterceptor';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    UserListComponent
+    UserListComponent,
+    NotebooksComponent,
+    BooksComponent,
+    SketchbooksComponent,
+    PencilsComponent,
+    PensComponent,
+    ColourpensComponent
   ],
   imports: [
     BrowserModule,

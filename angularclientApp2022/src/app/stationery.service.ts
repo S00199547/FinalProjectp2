@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StationeryService {
- private dataUri=environment.apiUrl+'/stationeries';
+ private dataUri =environment.apiUrl +'/stationeries';
   
  
  
